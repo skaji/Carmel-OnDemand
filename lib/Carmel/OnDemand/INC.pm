@@ -50,11 +50,18 @@ sub Carmel::OnDemand::INC::INC {
     }
 }
 
-INIT {
-    DEBUG and do {
+DEBUG and do {
+    eval <<'___';
+    INIT {
         warn "Carmel::OnDemand: \@INC (INIT phase):\n";
         warn "Carmel::OnDemand:   $_\n" for @INC;
     }
-}
+    END {
+        warn "Carmel::OnDemand: \@INC (END phase):\n";
+        warn "Carmel::OnDemand:   $_\n" for @INC;
+    }
+___
+};
+
 
 1;
