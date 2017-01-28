@@ -9,11 +9,10 @@ sub import {
     if (-e "$path/.carmel/MySetup.pm") {
         require Carmel::Setup;
         Carmel::Setup->import;
-        return;
+    } else {
+        require Carmel::OnDemand::INC;
+        unshift @INC, Carmel::OnDemand::INC->new;
     }
-    require Carmel::OnDemand::INC;
-    my $inc = Carmel::OnDemand::INC->new;
-    unshift @INC, $inc;
 }
 
 1;
