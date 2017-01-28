@@ -20,7 +20,7 @@ which keeps the distribution builds (artifacts) in a central repository.
 
 Carml uses `./.carmel/MySetup.pm` to pin module verions to be used.
 
-Sometims, you may just want to use the modules in artifacts without pinning modules versions.
+Sometimes, you may just want to use the modules in artifacts without pinning module versions.
 Then use Carmel::OnDemand.
 
 # TODO
